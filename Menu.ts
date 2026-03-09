@@ -1,0 +1,105 @@
+import readlinesync = require("readline-sync");
+import { colors } from "./src/util/Colors";
+
+export function main(){
+    let opcao: number;
+
+    while (true){
+         
+        console.log(colors.fg.yellowstrong,
+                    "*******************************************************");
+        console.log("                                                     ");
+        console.log("                BANCO DO BRAZIL COM Z                ");
+        console.log("                                                     ");
+        console.log("*******************************************************");
+        console.log("                                                     ");
+        console.log("            1 - Criar Conta                          ");
+        console.log("            2 - Listar todas as Contas               ");
+        console.log("            3 - Buscar Conta por Numero              ");
+        console.log("            4 - Atualizar Dados da Conta             ");
+        console.log("            5 - Apagar Conta                         ");
+        console.log("            6 - Sacar                                ");
+        console.log("            7 - Depositar                            ");
+        console.log("            8 - Transferir valores entre Contas      ");
+        console.log("            9 - Sair                                 ");
+        console.log("                                                     ");
+        console.log("*******************************************************");
+        console.log("                                                     ",
+        colors.reset);
+
+        console.log("Entre com a opção desejada: ");
+        opcao = readlinesync.questionInt("");
+
+        if (opcao == 9){
+            console.log(colors.fg.blue,
+                "\n Banco do brazil com Z - O seu Futuro começa aqui!");
+            sobre();
+            console.log(colors.reset, "");
+            process.exit(0);
+        }
+
+        switch (opcao){
+            case 1:
+                console.log(colors.fg.whitestrong,
+                    "\n\n Criar Conta \n\n", colors.reset);
+            keyPress()
+                break;
+            case 2:
+                console.log(colors.fg.whitestrong,
+                    "\n\n Listar todas as contas \n\n", colors.reset);
+                keyPress()
+                break;
+            case 3:
+                console.log(colors.fg.whitestrong,
+                    "\n\n Consultar dados da conta - por número \n\n", colors.reset);
+                keyPress()
+                break;
+            case 4:
+                console.log(colors.fg.whitestrong,
+                    "\n\n Atualizar dados da Conta \n\n", colors.reset);
+                keyPress()                   
+                break;
+            case 5:
+                console.log(colors.fg.whitestrong,
+                    "\n\n Apagar uma Conta \n\n", colors.reset);
+                keyPress()
+                break;
+            case 6:
+                console.log(colors.fg.whitestrong,
+                    "\n\n Saque \n\n", colors.reset);
+                keyPress()
+                break;
+            case 7:
+                console.log(colors.fg.whitestrong,
+                    "\n\n Depósito \n\n", colors.reset);
+                keyPress()
+                break;
+            case 8:
+                console.log(colors.fg.whitestrong,
+                    "\n\n Transferencia entre Contas \n\n", colors.reset);
+                keyPress()
+                break;
+            default:
+                console.log(colors.fg.whitestrong,
+                    "\n Opção Inválida! \n", colors.reset);
+                keyPress()
+                break;
+        }
+    }
+}
+
+function keyPress(): void {
+    console.log(colors.reset, "");
+    console.log("\n Pressione enter para continuar...");
+    readlinesync.prompt
+}
+
+export function sobre(): void{
+    console.log("\n*****************************************************");
+    console.log("Projeto Desenvolvido por: Lucas Araujo Fernandes");
+    console.log("Generation Brasil - generation@generation.org");
+    console.log("github.com/conteudoGeneration");
+    console.log("*****************************************************");
+}
+
+main();
