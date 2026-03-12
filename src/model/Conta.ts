@@ -65,7 +65,7 @@ export class Conta {
         return true;
     }
 
-    public depoistar(valor: number): void {
+    public depositar(valor: number): void {
         this._saldo = this._saldo + valor;
     }
 
